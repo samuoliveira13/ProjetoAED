@@ -9,12 +9,17 @@ using namespace std;
 
 class Student {
 public:
-    Student(int student_code, string student_name);
+    Student(int studentcode, string studentname);
+
+    int setStudentcode(int studentcode);
+    int getStudentcode();
+
+    string setStudentname(string studentname);
+    string getStudentname();
 
 private:
-    int student_code;
-    string student_name;
-
+    int studentcode;
+    string studentname;
 
 };
 

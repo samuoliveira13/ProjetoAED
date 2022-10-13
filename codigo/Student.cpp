@@ -4,8 +4,16 @@
 
 #include "include/Student.h"
 
-Student::Student(int student_code, string student_name) {
-    this -> student_code = student_code;
-    this -> student_name = student_name;
+Student::Student(int studentcode, string studentname) {
+    this -> studentcode = studentcode;
+    this -> studentname = studentname;
 
+}
+
+int Student::setStudentcode(int studentcode) {
+    this -> studentcode = studentcode;
+}
+
+string Student::setStudentname(std::string studentname) {
+    this -> studentname = studentname;
 }
