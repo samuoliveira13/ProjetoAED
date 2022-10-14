@@ -21,7 +21,7 @@ public:
     float getStarthour();
 
     float setDuration(float duration);
-    float setDuration();
+    float getDuration();
 
 private:
     string uccode;

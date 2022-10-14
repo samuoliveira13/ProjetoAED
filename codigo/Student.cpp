@@ -5,15 +5,21 @@
 #include "include/Student.h"
 
 Student::Student(int studentcode, string studentname) {
-    this -> studentcode = studentcode;
-    this -> studentname = studentname;
+    setStudentcode(studentcode);
+    setStudentname(studentname);
 
 }
 
 int Student::setStudentcode(int studentcode) {
     this -> studentcode = studentcode;
 }
+int Student::getStudentcode() {
+    return this -> studentcode;
+}
 
 string Student::setStudentname(std::string studentname) {
     this -> studentname = studentname;
+}
+string Student::getStudentname() {
+    return this -> studentname;
 }
