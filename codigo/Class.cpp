@@ -23,6 +23,6 @@ float Class::setStarthour(float starthour){
     this -> starthour = starthour;
 }
 
-float Class::setDuration(float duration{
+float Class::setDuration(float duration){
     this -> duration = duration;
 };
