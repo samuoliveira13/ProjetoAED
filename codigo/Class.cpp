@@ -3,12 +3,13 @@
 //
 
 #include "include/Class.h"
-
-Class::Class(string uccode, string classtype, float starthour, float duration) {
+Class::Class(string classcode, string uccode, string weekday, float starthour, float duration, string classtype) {
+    this -> classcode = classcode;
     this -> uccode = uccode;
-    this -> classtype = classtype;
+    this -> weekday = weekday;
     this -> starthour = starthour;
     this -> duration = duration;
+    this -> classtype = classtype;
 }
 
 string Class::setUccode(string uccode){
@@ -23,6 +24,6 @@ float Class::setStarthour(float starthour){
     this -> starthour = starthour;
 }
 
-float Class::setDuration(float duration{
+float Class::setDuration(float duration){
     this -> duration = duration;
 };

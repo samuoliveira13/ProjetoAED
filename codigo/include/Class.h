@@ -9,7 +9,7 @@ using namespace std;
 
 class Class {
 public:
-    Class(string uccode, string classtype, float starthour, float duration);
+    Class(string classcode, string uccode, string weekday, float starthour, float duration, string classtype);
 
     string setUccode(string uccode);
     string getUccode();
@@ -24,10 +24,12 @@ public:
     float setDuration();
 
 private:
+    string classcode;
     string uccode;
-    string classtype;
+    string weekday;
     float starthour;
     float duration;
+    string classtype;
 
 };
 

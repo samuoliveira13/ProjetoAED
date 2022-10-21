@@ -4,6 +4,10 @@
 
 #include "include/Turma.h"
 
-Turma::Turma(string class_code) {
-    this -> class_code = class_code;
+Turma::Turma(string classcode) {
+    this -> classcode = classcode;
+}
+
+string Turma::setClasscode(std::string classcode) {
+    this -> classcode = classcode;
 }

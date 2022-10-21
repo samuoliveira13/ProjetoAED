@@ -1,6 +1,8 @@
 #include <iostream>
+#include "codigo/include/Reader.h"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    Reader reader = Reader();
+    reader.ReadClasses();
     return 0;
 }

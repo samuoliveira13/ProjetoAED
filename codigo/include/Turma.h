@@ -9,10 +9,13 @@ using namespace std;
 
 class Turma {
 public:
-    Turma(string class_code);
+    Turma(string classcode);
+
+    string setClasscode(string classcode);
+    string getClasscode();
 
 private:
-    string class_code;
+    string classcode;
 
 };
 
