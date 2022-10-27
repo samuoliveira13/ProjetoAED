@@ -1,9 +1,6 @@
-//
-// Created by samue on 20/10/2022.
-//
-
 #include "include/Reader.h"
 #include "include/Class.h"
+#include "include/Student.h"
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -16,36 +13,57 @@ void Reader() {
 
 }
 
-vector<string> Reader::ReadClasses() {
+vector<Class> Reader::ReadClasses() {
+    int firstLine=0;
+    bool fim = true;
     fstream fin;
     fin.open("../schedule/classes.csv", ios::in);
     vector<Class> classList = {};
     vector<string> row;
     string line, word, temp;
 
-    while (fin >> temp) {
+    while (fim) {
         row.clear();
         getline(fin, line);
+        if(line== "") break;
         stringstream s(line);
         while (getline(s, word, ',')) {
             row.push_back(word);
         }
+        //para passar a primeira linha
+        if (firstLine==0){
+            firstLine++;
+            continue;
+        }
 
-        //Class(row[0], row[1], row[2], row[3], row[4], row[5]);
-        cout << "ClassCode: " << row[0] << " : \n";
-        cout << "UcCode: " << row[1] << "\n";
-        cout << "Weekday: " << row[2] << "\n";
-        cout << "StartHour: " << row[3] << "\n";
-        cout << "Duration: " << row[4] << "\n";
-        cout << "Type: " << row[5] << "\n";
-        break;
+        classList.push_back(Class(row[0], row[1], row[2], stof(row[3]), stof(row[4]), row[5]));
     }
+    return classList;
 }
 
-Reader::Reader() {
+vector <Student> Reader::ReadStudent() {
+    int firstLine=0;
+    bool fim = true;
+    fstream fin;
+    fin.open("../schedule/students_class.csv", ios::in);
+    vector<Student> studentList = {};
+    vector<string> row;
+    string line, word, temp;
 
-
+    while (fim) {
+        row.clear();
+        getline(fin, line);
+        if(line== "") break;
+        stringstream s(line);
+        while (getline(s, word, ',')) {
+            row.push_back(word);
+        }
+        //para passar a primeira linha
+        if (firstLine==0){
+            firstLine++;
+            continue;
+        }
+        studentList.push_back(Student(row[0], row[1], row[2], row[3]));
+    }
+    return studentList;
 }
-
-
-

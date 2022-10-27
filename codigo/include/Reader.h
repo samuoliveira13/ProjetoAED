@@ -1,19 +1,17 @@
-//
-// Created by samue on 20/10/2022.
-//
-
 #ifndef PROJETOAED_READER_H
 #define PROJETOAED_READER_H
 
 #include <string>
 #include <vector>
+#include "Class.h"
+#include "Student.h"
 
 using namespace std;
 
 class Reader {
 public:
-    Reader();
-    std::vector<string> ReadClasses();
+    vector<Class> ReadClasses();
+    vector<Student> ReadStudent();
 };
 
 

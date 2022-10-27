@@ -1,26 +1,27 @@
-//
-// Created by samuel on 13/10/2022.
-//
-
 #ifndef PROJETOAED_STUDENT_H
 #define PROJETOAED_STUDENT_H
+
 #include <string>
+
 using namespace std;
 
 class Student {
 public:
-    Student(int studentcode, string studentname);
-
-    int setStudentcode(int studentcode);
-    int getStudentcode();
-
+    Student(string studentcode, string studentname, string ucCode, string classCode);
+    string setStudentcode(string studentcode);
+    string getStudentcode();
     string setStudentname(string studentname);
     string getStudentname();
+    string setUccode(string uccode);
+    string getUccode();
+    string setClassCode(string classcode);
+    string getClassCode();
 
 private:
-    int studentcode;
+    string studentcode;
     string studentname;
-
-};
+    string uccode;
+    string classcode;
+    };
 
 #endif //PROJETOAED_STUDENT_H

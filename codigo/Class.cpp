@@ -1,7 +1,3 @@
-//
-// Created by samuel on 13/10/2022.
-//
-
 #include "include/Class.h"
 Class::Class(string classcode, string uccode, string weekday, float starthour, float duration, string classtype) {
     this -> classcode = classcode;
@@ -26,4 +22,28 @@ float Class::setStarthour(float starthour){
 
 float Class::setDuration(float duration){
     this -> duration = duration;
-};
+}
+
+string Class::getUccode() {
+    return uccode;
+}
+
+string Class::getClassCode() {
+    return classcode;
+}
+
+string Class::getWeekDay() {
+    return weekday;
+}
+
+float Class::getStarthour() {
+    return starthour;
+}
+
+float Class::getDuration() {
+    return duration;
+}
+
+string Class::getClassType() {
+    return classtype;
+}
