@@ -14,7 +14,7 @@ void Reader() {
 }
 
 vector<Class> Reader::ReadClasses() {
-    int firstLine=0;
+    int firstLine = 0;
     bool fim = true;
     fstream fin;
     fin.open("../schedule/classes.csv", ios::in);
@@ -31,7 +31,7 @@ vector<Class> Reader::ReadClasses() {
             row.push_back(word);
         }
         //para passar a primeira linha
-        if (firstLine==0){
+        if (firstLine == 0){
             firstLine++;
             continue;
         }
@@ -45,7 +45,7 @@ vector <Student> Reader::ReadStudent() {
     int firstLine=0;
     bool fim = true;
     fstream fin;
-    fin.open("../schedule/students_class.csv", ios::in);
+    fin.open("../schedule/students_classes.csv", ios::in);
     vector<Student> studentList = {};
     vector<string> row;
     string line, word, temp;
@@ -53,13 +53,13 @@ vector <Student> Reader::ReadStudent() {
     while (fim) {
         row.clear();
         getline(fin, line);
-        if(line== "") break;
+        if(line == "") break;
         stringstream s(line);
         while (getline(s, word, ',')) {
             row.push_back(word);
         }
         //para passar a primeira linha
-        if (firstLine==0){
+        if (firstLine == 0){
             firstLine++;
             continue;
         }

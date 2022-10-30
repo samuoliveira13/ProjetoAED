@@ -47,3 +47,14 @@ float Class::getDuration() {
 string Class::getClassType() {
     return classtype;
 }
+int Class::orderWeekDay() {
+    if(weekday=="Monday") return 1;
+    else if(weekday=="Tuesday") return 2;
+    else if(weekday=="Wednesday") return 3;
+    else if(weekday=="Thursday") return 4;
+    else if(weekday=="Friday") return 5;
+}
+bool Class::operator<(Class &other){
+    if(orderWeekDay()==other.orderWeekDay()) return starthour<other.starthour;
+    return orderWeekDay()<other.orderWeekDay();
+}

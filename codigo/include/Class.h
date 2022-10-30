@@ -17,6 +17,8 @@ public:
     string getClassType();
     string getWeekDay();
     string getClassCode();
+    int orderWeekDay();
+    bool operator<(Class &other);
 private:
     string classcode;
     string uccode;
