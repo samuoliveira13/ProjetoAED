@@ -3,6 +3,7 @@
 #define PROJETOAED_MENU_H
 
 #include <string>
+#include <vector>
 
 class Menu {
 
@@ -18,6 +19,8 @@ private:
     void EstudanteTurma();
     void EstudanteCadeira();
     void EstudanteCadeiraTurma();
+    void MaisCadeiras();
+    void AfterExec();
 
     bool TurmaExists(std::string turma);
     bool CadeirainTurmaExists(std::string turma, std::string cadeira);

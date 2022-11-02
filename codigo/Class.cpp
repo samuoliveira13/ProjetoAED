@@ -1,3 +1,5 @@
+
+#include <iostream>
 #include "include/Class.h"
 Class::Class(string classcode, string uccode, string weekday, float starthour, float duration, string classtype) {
     this -> classcode = classcode;
@@ -54,7 +56,65 @@ int Class::orderWeekDay() {
     else if(weekday=="Thursday") return 4;
     else if(weekday=="Friday") return 5;
 }
-bool Class::operator<(Class &other){
-    if(orderWeekDay()==other.orderWeekDay()) return starthour<other.starthour;
-    return orderWeekDay()<other.orderWeekDay();
+int Class::orderTypeClasses(){
+    if (classtype=="T") return 1;
+    return 2;
 }
+
+/*
+    int order;
+    std::cout<<"Como deseja ordenar o horario?"<<endl;
+    std::cout<<"1(default)-> ordem crescente"<<endl;
+    std::cout<<"2-> ordem decrescente"<<endl;
+    std::cout<<"3-> primeiro pelas aulas teoricas"<<endl;
+    std::cout<<"4-> pelo codigo da UC"<<endl;
+    std::cout<<"5-> pela duracao da aula"<<endl;
+    cin>> order;
+    while(true) {
+        switch (order) {
+            case 2:
+                if (x.orderWeekDay() == y.orderWeekDay()) {
+                    if (starthour == other.starthour) return classcode > other.classcode;
+                    else return starthour > other.starthour;
+                }
+                return orderWeekDay() > other.orderWeekDay();
+            case 3:
+                if (orderTypeClasses() == other.orderTypeClasses()) {
+                    if (orderWeekDay() == other.orderWeekDay()) {
+                        if (starthour == other.starthour) return classcode < other.classcode;
+                        else return starthour < other.starthour;
+                    }
+                    return orderWeekDay() < other.orderWeekDay();
+                }
+                return orderTypeClasses() < other.orderTypeClasses();
+            case 4:
+                if (uccode == other.uccode) {
+                    if (orderTypeClasses() == other.orderTypeClasses()) {
+                        if (orderWeekDay() == other.orderWeekDay()) {
+                            if (starthour == other.starthour) return classcode < other.classcode;
+                            else return starthour < other.starthour;
+                        }
+                        return orderWeekDay() < other.orderWeekDay();
+                    }
+                    return orderTypeClasses() < other.orderTypeClasses();
+                }
+                return (uccode < other.uccode);
+            case 5:
+                if (duration == other.duration) {
+                    if (orderWeekDay() == other.orderWeekDay()) {
+                        if (starthour == other.starthour) return classcode < other.classcode;
+                        else return starthour < other.starthour;
+                    }
+                    return orderWeekDay() < other.orderWeekDay();
+                }
+                return duration < other.duration;
+            default:
+                if (orderWeekDay() == other.orderWeekDay()) {
+                    if (starthour == other.starthour) return classcode < other.classcode;
+                    else return starthour < other.starthour;
+                }
+                return orderWeekDay() < other.orderWeekDay();
+        }
+    }
+}
+ */
