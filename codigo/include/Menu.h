@@ -20,12 +20,14 @@ private:
     void EstudanteCadeira();
     void EstudanteCadeiraTurma();
     void MaisCadeiras();
+    void RemoveStudentUc();
     void AfterExec();
 
-    bool TurmaExists(std::string turma);
-    bool CadeirainTurmaExists(std::string turma, std::string cadeira);
     bool StudentExists(std::string aluno);
+    bool TurmaExists(std::string turma);
     bool CadeiraExists(std::string turma);
+    bool AlunoinCadeiraExists(std::string aluno, std::string turma);
+    bool CadeirainTurmaExists(std::string turma, std::string cadeira);
 
 };
 

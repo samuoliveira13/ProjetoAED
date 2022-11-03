@@ -28,8 +28,9 @@ vector<Class>::iterator Horario::end(){
 }
 void Horario::print() {
     for(auto x:horario) {
-        cout << x.getWeekDay() << " | " << x.getUccode() << " "
-             << x.getClassType() << " class from "
+        cout << x.getWeekDay() << " | " << x.getUccode()
+             << " " << x.getClassType() << " class in "
+             << x.getClassCode() << " from "
              << TransformHour(x.getStarthour()) << " to "
              << SumHours(x.getStarthour(), x.getDuration())
              << endl;

@@ -25,6 +25,7 @@ void Menu::mainMenu() {
     cout << "Bem Vindo" << endl << endl;
     cout << "1 -> Ver Horarios" << endl;
     cout << "2 -> Ver Estudantes" << endl;
+    cout << "3 -> Efetuar Alteracoes" << endl;
     cout << "Outro -> Sair" << endl << endl;
     cout << "==============================================================" << endl;
     cin >> input;
@@ -86,6 +87,25 @@ void Menu::mainMenu() {
                 default:
                     exit(-1);
             }
+        case 3:
+            int input3;
+            cout << "==============================================================" << endl << endl;
+            cout << "1 -> remover um estudante de uma cadeira." << endl;
+            cout << "2 -> inserir um estudantes numa cadeira" << endl;
+            cout << "Outro -> Sair" << endl << endl;
+            cout << "==============================================================" << endl;
+            cin >> input3;
+            switch (input3) {
+                case 1:
+                    RemoveStudentUc();
+                    break;
+                case 2:
+                    //InsertStudentUc();
+                    break;
+                default:
+                    exit(-1);
+            }
+            break;
         default:
             exit(-1);
     }
@@ -164,7 +184,7 @@ void Menu::TurmaHorario() {
             }
         }
     }
-    order=horario.type_of_order();
+    order = horario.type_of_order();
     switch(order){
         case 2:
             sort(horario.begin(),horario.end(),horario.decrescent_order);
@@ -262,7 +282,7 @@ void Menu::CadeirainTurmaHorario() {
             }
         }
     }
-    order=horario.type_of_order();
+    order = horario.type_of_order();
     switch(order){
         case 2:
             sort(horario.begin(),horario.end(),horario.decrescent_order);
@@ -426,6 +446,36 @@ void Menu::MaisCadeiras() {
 
 
 /**
+ * @brief removes a student from a uc
+ * @returns studentList without the student in the uc
+ */
+void Menu::RemoveStudentUc() {
+    string aluno;
+    string cadeira;
+    cout << "Introduza o aluno que prentende remover: " << endl;
+    cin >> aluno;
+    if (StudentExists(aluno) == false) {
+        cout << "O aluno que introduziu nao existe, introduza um aluno valido" << endl;
+        RemoveStudentUc();
+    } else {
+        cout << "Introduza a cadeira: " << endl;
+        cin >> cadeira;
+        if (AlunoinCadeiraExists(aluno, cadeira)) {
+            cout << "O aluno nao esta inscrito na cadeira que introduziu" << endl;
+            RemoveStudentUc();
+        } else {
+            for (auto it = studentList.begin(); it != studentList.end();it ++) {
+                if (it->getClassCode() == cadeira && it->getStudentcode() == aluno) {
+                    studentList.erase(it);
+                }
+            }
+            cout << "O aluno " << aluno << " foi removido da " << cadeira << endl;
+        }
+    }
+    AfterExec();
+}
+
+/**
  * @brief checks if the student exists
  * @return true or false
  */
@@ -478,7 +528,17 @@ bool Menu::CadeirainTurmaExists(string turma, string cadeira) {
     return res;
 }
 
-
+/**
+ * @brief checks if the student has the uc
+ * @return true or false
+ */
+bool Menu:: AlunoinCadeiraExists(string aluno, string cadeira) {
+    bool res = false;
+    for (int i = 0; i < studentList.size(); i++) {
+        if (studentList[i].getStudentcode() == aluno && studentList[i].getClassCode() == cadeira) res = true;
+    }
+    return res;
+}
 /**
  * @brief executes after each process, asks if the user is done using the programm
  * @return 1) the user is not done (restarts) or 2) the user is done (exits programm)

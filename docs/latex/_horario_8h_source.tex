@@ -1,0 +1,48 @@
+\hypertarget{_horario_8h_source}{}\doxysection{Horario.\+h}
+\label{_horario_8h_source}\index{C:/Users/samue/OneDrive -\/ Universidade do Porto/desktop/projetoaed1/codigo/include/Horario.h@{C:/Users/samue/OneDrive -\/ Universidade do Porto/desktop/projetoaed1/codigo/include/Horario.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#ifndef PROJETOAED\_HORARIO\_H}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#define PROJETOAED\_HORARIO\_H}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}Class.h"{}}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{keyword}{class }\mbox{\hyperlink{class_horario}{Horario}}\{}
+\DoxyCodeLine{8 \textcolor{keyword}{public}:}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10     vector<Class> getHorario();}
+\DoxyCodeLine{11     vector<Class> add\_to\_horario(\mbox{\hyperlink{class_class}{Class}} x);}
+\DoxyCodeLine{12     vector<Class> remove\_from\_horario(\mbox{\hyperlink{class_class}{Class}} x);}
+\DoxyCodeLine{13     vector<Class>::iterator begin();}
+\DoxyCodeLine{14     vector<Class>::iterator end();}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16     \mbox{\hyperlink{class_horario}{Horario}}();}
+\DoxyCodeLine{17     \mbox{\hyperlink{class_horario}{Horario}}(vector<Class> horario);}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{22     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_horario_a5e8c0e525efd6b87a22b02f32e8572e2}{clear}}();}
+\DoxyCodeLine{23     \textcolor{keywordtype}{void} push\_back(\mbox{\hyperlink{class_class}{Class}} x);}
+\DoxyCodeLine{24     \textcolor{keywordtype}{void} ordenar(\textcolor{keywordtype}{int} order);}
+\DoxyCodeLine{25     \textcolor{keywordtype}{void} print();}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{33     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_horario_a7e6ff8d36a6de91ded40e800bc4203b3}{type\_of\_order}}();}
+\DoxyCodeLine{34     \textcolor{keywordtype}{bool} \textcolor{keyword}{static} decrescent\_order(\mbox{\hyperlink{class_class}{Class}} x,\mbox{\hyperlink{class_class}{Class}} y);}
+\DoxyCodeLine{35     \textcolor{keywordtype}{bool} \textcolor{keyword}{static} teoricas\_first(\mbox{\hyperlink{class_class}{Class}} x,\mbox{\hyperlink{class_class}{Class}} y);}
+\DoxyCodeLine{36     \textcolor{keywordtype}{bool} \textcolor{keyword}{static} uc\_order(\mbox{\hyperlink{class_class}{Class}} x,\mbox{\hyperlink{class_class}{Class}} y);}
+\DoxyCodeLine{37     \textcolor{keywordtype}{bool} \textcolor{keyword}{static} duration\_order(\mbox{\hyperlink{class_class}{Class}} x,\mbox{\hyperlink{class_class}{Class}} y);}
+\DoxyCodeLine{38     \textcolor{keywordtype}{bool} \textcolor{keyword}{static} crescent\_order(\mbox{\hyperlink{class_class}{Class}} x,\mbox{\hyperlink{class_class}{Class}} y);}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{45     \textcolor{keywordtype}{string} \mbox{\hyperlink{class_horario_ad8f141cd9aebfa798235e37455edda72}{TransformHour}}(\textcolor{keywordtype}{float} hour);}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{53     \textcolor{keywordtype}{string} \mbox{\hyperlink{class_horario_afbfb23c5555f3723dd8bf4562eee2e4e}{SumHours}}(\textcolor{keywordtype}{float} starthour, \textcolor{keywordtype}{float} duration);}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{keyword}{private}:}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57     vector<Class> horario;}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59     \textcolor{keywordtype}{void} UcMap();}
+\DoxyCodeLine{60 \};}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//PROJETOAED\_HORARIO\_H}}
+
+\end{DoxyCode}
