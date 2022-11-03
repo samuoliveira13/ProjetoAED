@@ -12,6 +12,7 @@ vector<Class> classList = reader.ReadClasses();
 vector<Student> studentList = reader.ReadStudent();
 Horario horario;
 int order;
+
 Menu::Menu() {
     mainMenu();
 }
@@ -100,7 +101,7 @@ void Menu::mainMenu() {
                     RemoveStudentUc();
                     break;
                 case 2:
-                    //InsertStudentUc();
+                    InsertStudentUc();
                     break;
                 default:
                     exit(-1);
@@ -141,21 +142,21 @@ void Menu::EstudanteHorario() {
 
     order = horario.type_of_order();            //perguntar a categoria de ordenacao
 
-    switch(order){
+    switch (order) {
         case 2:
-            sort(horario.begin(),horario.end(),horario.decrescent_order);       //ordem decrescente
+            sort(horario.begin(), horario.end(), horario.decrescent_order);       //ordem decrescente
             break;
         case 3:
-            sort(horario.begin(),horario.end(),horario.teoricas_first);        //primeiro teoricas
+            sort(horario.begin(), horario.end(), horario.teoricas_first);        //primeiro teoricas
             break;
         case 4:
-            sort(horario.begin(),horario.end(),horario.uc_order);               //codigo uc
+            sort(horario.begin(), horario.end(), horario.uc_order);               //codigo uc
             break;
         case 5:
-            sort(horario.begin(),horario.end(),horario.duration_order);        //duracao
+            sort(horario.begin(), horario.end(), horario.duration_order);        //duracao
             break;
         default:
-            sort(horario.begin(),horario.end(),horario.crescent_order);      //ordem crescente
+            sort(horario.begin(), horario.end(), horario.crescent_order);      //ordem crescente
             break;
     }
     horario.print();
@@ -185,21 +186,21 @@ void Menu::TurmaHorario() {
         }
     }
     order = horario.type_of_order();
-    switch(order){
+    switch (order) {
         case 2:
-            sort(horario.begin(),horario.end(),horario.decrescent_order);
+            sort(horario.begin(), horario.end(), horario.decrescent_order);
             break;
         case 3:
-            sort(horario.begin(),horario.end(),horario.teoricas_first);
+            sort(horario.begin(), horario.end(), horario.teoricas_first);
             break;
         case 4:
-            sort(horario.begin(),horario.end(),horario.uc_order);
+            sort(horario.begin(), horario.end(), horario.uc_order);
             break;
         case 5:
-            sort(horario.begin(),horario.end(),horario.duration_order);
+            sort(horario.begin(), horario.end(), horario.duration_order);
             break;
         default:
-            sort(horario.begin(),horario.end(),horario.crescent_order);
+            sort(horario.begin(), horario.end(), horario.crescent_order);
             break;
     }
     horario.print();
@@ -228,22 +229,22 @@ void Menu::CadeiraHorario() {
             }
         }
     }
-    order=horario.type_of_order();
-    switch(order){
+    order = horario.type_of_order();
+    switch (order) {
         case 2:
-            sort(horario.begin(),horario.end(),horario.decrescent_order);
+            sort(horario.begin(), horario.end(), horario.decrescent_order);
             break;
         case 3:
-            sort(horario.begin(),horario.end(),horario.teoricas_first);
+            sort(horario.begin(), horario.end(), horario.teoricas_first);
             break;
         case 4:
-            sort(horario.begin(),horario.end(),horario.uc_order);
+            sort(horario.begin(), horario.end(), horario.uc_order);
             break;
         case 5:
-            sort(horario.begin(),horario.end(),horario.duration_order);
+            sort(horario.begin(), horario.end(), horario.duration_order);
             break;
         default:
-            sort(horario.begin(),horario.end(),horario.crescent_order);
+            sort(horario.begin(), horario.end(), horario.crescent_order);
             break;
     }
     horario.print();
@@ -276,28 +277,28 @@ void Menu::CadeirainTurmaHorario() {
         } else {
             for (int i = 0; i < classList.size(); i++) {
                 if (classList[i].getUccode() == cadeira &&                  //se a cadeira e a
-                    classList[i].getClassCode() == turma){                  //turma forem iguais
+                    classList[i].getClassCode() == turma) {                  //turma forem iguais
                     horario.push_back(classList[i]);
                 }
             }
         }
     }
     order = horario.type_of_order();
-    switch(order){
+    switch (order) {
         case 2:
-            sort(horario.begin(),horario.end(),horario.decrescent_order);
+            sort(horario.begin(), horario.end(), horario.decrescent_order);
             break;
         case 3:
-            sort(horario.begin(),horario.end(),horario.teoricas_first);
+            sort(horario.begin(), horario.end(), horario.teoricas_first);
             break;
         case 4:
-            sort(horario.begin(),horario.end(),horario.uc_order);
+            sort(horario.begin(), horario.end(), horario.uc_order);
             break;
         case 5:
-            sort(horario.begin(),horario.end(),horario.duration_order);
+            sort(horario.begin(), horario.end(), horario.duration_order);
             break;
         default:
-            sort(horario.begin(),horario.end(),horario.crescent_order);
+            sort(horario.begin(), horario.end(), horario.crescent_order);
             break;
     }
     horario.print();
@@ -397,7 +398,8 @@ void Menu::EstudanteCadeiraTurma() {
                 }
             }
 
-            cout << "A cadeira " << cadeira << " da turma " << turma << " tem " << ucStudents.size() << " alunos" << endl;
+            cout << "A cadeira " << cadeira << " da turma " << turma << " tem " << ucStudents.size() << " alunos"
+                 << endl;
 
             for (string student: ucStudents) {
                 cout << student << endl;            //print a cada aluno
@@ -418,7 +420,7 @@ void Menu::MaisCadeiras() {
     cout << "Introduza o numero de cadeias: ";
     cin >> n;
     cout << endl;
-    for (int i = 0; i < studentList.size() -1 ; i++) {
+    for (int i = 0; i < studentList.size() - 1; i++) {
         for (int j = 1; j < studentList.size(); j++) {
             if (studentList[i].getStudentcode() == studentList[j].getStudentcode() &&
                 studentList[i].getClassCode() != studentList[j].getClassCode()) {
@@ -433,8 +435,7 @@ void Menu::MaisCadeiras() {
 
     if (ucStudents.size() == 0) {
         cout << "Nao ha nenhum aluno com mais de " << n << " cadeiras." << endl;
-    }
-    else {
+    } else {
         cout << "Ha " << ucStudents.size() << " alunos com mais de " << n << " cadeiras: " << endl;
 
         for (string student: ucStudents) {
@@ -464,12 +465,50 @@ void Menu::RemoveStudentUc() {
             cout << "O aluno nao esta inscrito na cadeira que introduziu" << endl;
             RemoveStudentUc();
         } else {
-            for (auto it = studentList.begin(); it != studentList.end();it ++) {
+            for (auto it = studentList.begin(); it != studentList.end(); it++) {
                 if (it->getClassCode() == cadeira && it->getStudentcode() == aluno) {
                     studentList.erase(it);
                 }
             }
             cout << "O aluno " << aluno << " foi removido da " << cadeira << endl;
+        }
+    }
+    AfterExec();
+}
+
+void Menu::InsertStudentUc() {
+    string nomeAluno;
+    string classAluno;
+    string aluno;
+    string cadeira;
+    string turma;
+    cout << "Introduza o aluno: ";
+    cin >> aluno;
+    cout << endl;
+    if (StudentExists(aluno) == false) {
+        cout << "O aluno que introduziu nao existe, introduza um aluno valido" << endl;
+        InsertStudentUc();
+    } else {
+        cout << "Introduza a unidade curricular: ";
+        cin >> cadeira;
+        if (AlunoinCadeiraExists(aluno, cadeira) == true) {
+            cout << "O aluno ja esta inscrito na unidade curricular que introduziu" << endl;
+            InsertStudentUc();
+        } else {
+            cout << "Introduza a turma em que o aluno vai ser inscrito: ";
+            cin >> turma;
+            if (TurmaExists(turma) == false) {
+                cout << "A turma que introduziu nao existe, introduza uma turma valida" << endl;
+                InsertStudentUc();
+            } else {
+                for (auto it = studentList.begin(); it != studentList.end(); it++) {
+                    if (it->getStudentcode() == aluno) {
+                        nomeAluno = it->getStudentname();
+                    }
+                }
+                studentList.push_back(Student(aluno, nomeAluno, cadeira, turma));
+                cout << "O aluno " << aluno << " foi inserido na uc " << cadeira << " na turma " << turma << endl;
+            }
         }
     }
     AfterExec();
@@ -532,13 +571,14 @@ bool Menu::CadeirainTurmaExists(string turma, string cadeira) {
  * @brief checks if the student has the uc
  * @return true or false
  */
-bool Menu:: AlunoinCadeiraExists(string aluno, string cadeira) {
+bool Menu::AlunoinCadeiraExists(string aluno, string cadeira) {
     bool res = false;
     for (int i = 0; i < studentList.size(); i++) {
-        if (studentList[i].getStudentcode() == aluno && studentList[i].getClassCode() == cadeira) res = true;
+        if (studentList[i].getStudentcode() == aluno && studentList[i].getUccode() == cadeira) res = true;
     }
     return res;
 }
+
 /**
  * @brief executes after each process, asks if the user is done using the programm
  * @return 1) the user is not done (restarts) or 2) the user is done (exits programm)

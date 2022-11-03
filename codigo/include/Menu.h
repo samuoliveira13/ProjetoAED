@@ -29,6 +29,7 @@ private:
     bool AlunoinCadeiraExists(std::string aluno, std::string turma);
     bool CadeirainTurmaExists(std::string turma, std::string cadeira);
 
+    void InsertStudentUc();
 };
 
 
